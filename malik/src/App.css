@@ -1,0 +1,29 @@
+/* Make sure to include slick-carousel styles */
+.slick-slide {
+    display: flex;
+    justify-content: center; /* Center items in the slide */
+}
+
+.slick-slide > div {
+    display: flex;
+    justify-content: center; /* Center content within the slide */
+}
+
+.slick-track {
+    display: flex;
+    align-items: center; /* Vertically center the slides */
+}
+
+.slick-dots {
+    bottom: -30px; /* Adjust position of dots as needed */
+}
+
+.slick-arrow {
+    z-index: 1; /* Ensure arrows are above other elements */
+}
+
+/* Adjust container to ensure full width */
+.slick-slider {
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center the carousel */
+}

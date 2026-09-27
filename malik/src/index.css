@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Roboto';
+    src: url('/path-to-your-fonts/roboto-regular.woff2') format('woff2'),
+         url('/path-to-your-fonts/roboto-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/path-to-your-fonts/roboto-bold.woff2') format('woff2'),
+         url('/path-to-your-fonts/roboto-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+  }
+  /* Add this to your global CSS file or Tailwind's custom CSS file */
+@layer utilities {
+  .group {
+    position: relative;
+    display: inline-block;
+  }
+
+  .group::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Adjust this value to place the underline correctly */
+    left: 0;
+    width: 0;
+    height: 2px; /* Adjust this value for the thickness of the underline */
+    background-color: #000; /* Customize the underline color */
+    transition: width 0.3s ease, background-color 0.3s ease; /* Animation duration */
+  }
+  
+
+  .group:hover::after {
+    width: 100%;
+    background-color: #ff5733; /* Customize the underline color on hover if needed */
+  }
+}
+/* Make sure to include slick-carousel styles */
+.slick-slide {
+  display: flex;
+  justify-content: center; /* Center items in the slide */
+}
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center; /* Center content within the slide */
+}
+
+.slick-track {
+  display: flex;
+  align-items: center; /* Vertically center the slides */
+}
+
+.slick-dots {
+  bottom: -30px; /* Adjust position of dots as needed */
+}
+
+.slick-arrow {
+  z-index: 1; /* Ensure arrows are above other elements */
+}
+
+/* Adjust container to ensure full width */
+.slick-slider {
+  width: 100%; /* Full width */
+  margin: 0 auto; /* Center the carousel */
+}
+
+/* Ensure the custom pagination is always centered near the bottom */
+.custom-swiper-pagination {
+  position: absolute !important;
+  bottom: 20px ; /* Adjust this value to place it above the bottom */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: auto !important;
+  z-index: 20 !important;
+  margin-top: 300px;
+}
+
+/* Increase the size of the pagination bullets */
+.custom-swiper-pagination .swiper-pagination-bullet {
+  width: 20px !important; /* Adjust bullet width */
+  height: 20px !important; /* Adjust bullet height */
+  background-color: #ccc !important; /* Default color */
+  opacity: 1 !important; /* Ensure bullets are fully visible */
+  margin: 0 5px !important; /* Adjust spacing between bullets */
+}
+
+/* Style the active pagination bullet */
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #000 !important; /* Color for the active bullet */
+}
+/* Custom styles for slick slider navigation arrows */
+.slick-prev,
+.slick-next {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    background-color: black; /* Default background color */
+    border-radius: 50%; /* Circular shape */
+    z-index: 10; /* Ensure arrows are above the content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: red; /* Background color on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+/* Arrow icons */
+.slick-prev::before,
+.slick-next::before {
+    font-size: 24px; /* Size of the arrow icon */
+    color: #fff; /* Arrow color */
+}
+
+/* Position of arrows */
+.slick-prev {
+    left: 10px; /* Distance from the left */
+}
+
+.slick-next {
+    right: 10px; /* Distance from the right */
+}
+
+/* Optional: Style the dots if needed */
+.slick-dots li button:before {
+    font-size: 12px; /* Size of the dots */
+    color: rgba(0, 0, 0, 0.5); /* Dot color */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #000; /* Active dot color */
+}
+
+
+
+  
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
